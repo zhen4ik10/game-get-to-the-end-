@@ -1,0 +1,162 @@
+/* Підключення шрифтів */
+@import url("fonts.css");
+/* Обнуляємо стилі */
+@import url("reset.css");
+
+body {
+    background-color: #77608d;
+    font-size: 18px;
+}
+
+
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #7A956B;
+    min-height: 100vh;
+    padding: 15px;
+}
+
+.title {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+
+.block-game {
+    max-width: 800px;
+    min-height: 700px;
+    margin: 0 auto;
+    padding: 10px;
+    outline: 1px solid;
+}
+
+.block-title {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #fff;
+    font-weight: 900;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.block-1,
+.block-2,
+.block-3,
+.block-4,
+.block-5,
+.block-6,
+.block-7,
+.block-8,
+.block-9,
+.block-10 {
+    cursor: pointer;
+    background-color: violet;
+    visibility: hidden;
+}
+
+
+.block-1 {
+    max-width: 80px;
+    min-height: 50px;
+    visibility: visible;
+}
+
+.block-2 {
+    min-height: 60px;
+    max-width: 100%;
+}
+
+.block-3 {
+    max-width: 60px;
+    min-height: 160px;
+    margin-left: auto;
+    margin-top: -60px;
+}
+
+.block-4 {
+    max-width: 100%;
+    min-height: 50px;
+}
+
+.block-5 {
+    max-width: 40px;
+    min-height: 100px;
+}
+
+.block-6 {
+    max-width: 100%;
+    min-height: 30px;
+}
+
+.block-7 {
+    max-width: 20px;
+    min-height: 100px;
+    margin-left: auto;
+}
+
+.block-8 {
+    max-width: 100%;
+    min-height: 10px;
+}
+
+.block-9 {
+    max-width: 5px;
+    min-height: 100px;
+}
+
+.block-10 {
+    max-width: 10px;
+    min-height: 10px;
+    background-color: yellow;
+    margin-bottom: 30px;
+}
+
+.finish {
+    max-width: 100%;
+    font-size: 30px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 900;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    text-align: center;
+    color: gold;
+    visibility: hidden;
+}
+
+.block-1:hover+.block-2,
+.block-2:hover+.block-3,
+.block-3:hover+.block-4,
+.block-4:hover+.block-5,
+.block-5:hover+.block-6,
+.block-6:hover+.block-7,
+.block-7:hover+.block-8,
+.block-8:hover+.block-9,
+.block-9:hover+.block-10,
+.block-10:hover+.finish {
+    visibility: visible;
+}
+
+.block-2:hover,
+.block-3:hover,
+.block-4:hover,
+.block-5:hover,
+.block-6:hover,
+.block-7:hover,
+.block-8:hover,
+.block-9:hover,
+.block-10:hover,
+.finish:hover {
+    visibility: visible;
+}
+
+.block-10:hover {
+    max-width: 25px;
+    min-height: 25px;
+}
+
+.finish:hover {
+    visibility: visible;
+}
