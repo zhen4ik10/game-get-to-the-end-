@@ -4,35 +4,121 @@
 @import url("reset.css");
 
 body {
+    font-family: "Poppins",
+        sans-serif;
     background-color: #77608d;
     font-size: 18px;
 }
 
+/* ------ GAME ------- */
 
-.wrapper {
-    max-width: 1200px;
-    margin: 0 auto;
-    background-color: #7A956B;
-    min-height: 100vh;
-    padding: 15px;
+
+.game__wrapper {
+    max-width: 1120px;
+    margin: 0 auto 100px;
+    background-color: #7CDEDC;
+    /* padding: 10px 15px; */
+    padding: 10px 50px;
 }
 
-.title {
+.game__wrapper,
+.game-link,
+.game-block,
+.game__info {
+    border-radius: 8px;
+}
+
+.game__title {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: 700;
     font-size: 40px;
     text-align: center;
     margin-bottom: 30px;
+    color: #fff;
+}
+
+.game__info {
+    outline: 3px solid;
+    padding: 50px 15px 25px;
+    margin-bottom: 50px;
+    color: #fff;
+    background-color: #9E788F;
+    box-shadow: 10px 10px 20px #000;
+    position: relative;
+}
+
+.game__info::before,
+.game__info::after {
+    content: "";
+    width: 130px;
+    height: 30px;
+    background-color: red;
+    position: absolute;
+}
+
+.game__info::before {
+
+    top: 10px;
+    left: -50px;
+    transform: rotate(-45deg);
+}
+
+.game__info::after {
+    top: 10px;
+    right: -50px;
+    transform: rotate(45deg);
+}
+
+.game__info>*:last-child {
+    margin-bottom: 0;
+}
+
+.game__info-title {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.game__info-text {
+    margin-bottom: 25px;
+    line-height: 1.2;
+}
+
+.game__info-list {
+    margin-bottom: 15px;
+    margin-left: 20px;
+}
+
+.game__info-list li {
+    font-size: 20px;
+    list-style-type: decimal;
+    line-height: 1.2;
+}
+
+.game__info-list li:not(:last-child) {
+    margin-bottom: 7px;
+}
+
+.game-link {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: 700;
+    background-color: #13906d;
+    margin-bottom: 30px;
+    padding: 15px 20px;
+    color: #fff;
 }
 
 
-.block-game {
+
+.game-block {
     max-width: 800px;
-    min-height: 700px;
     margin: 0 auto;
     padding: 10px;
-    outline: 1px solid;
+    outline: 2px solid;
+    display: none;
 }
+
+
 
 .block-title {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -42,7 +128,7 @@ body {
     margin-bottom: 10px;
 }
 
-.block-1,
+.block_1,
 .block-2,
 .block-3,
 .block-4,
@@ -53,32 +139,37 @@ body {
 .block-9,
 .block-10 {
     cursor: pointer;
-    background-color: violet;
+    background-color: #9E788F;
     visibility: hidden;
 }
 
 
-.block-1 {
+.block_1 {
     max-width: 80px;
     min-height: 50px;
-    visibility: visible;
 }
+
 
 .block-2 {
     min-height: 60px;
     max-width: 100%;
+    border-radius: 0 10px 0 10px;
+
 }
+
 
 .block-3 {
     max-width: 60px;
     min-height: 160px;
     margin-left: auto;
     margin-top: -60px;
+    border-radius: 0 10px 0 0;
 }
 
 .block-4 {
     max-width: 100%;
     min-height: 50px;
+    border-radius: 0 0 10px 0;
 }
 
 .block-5 {
@@ -99,17 +190,17 @@ body {
 
 .block-8 {
     max-width: 100%;
-    min-height: 10px;
+    min-height: 40px;
 }
 
 .block-9 {
-    max-width: 5px;
+    max-width: 25px;
     min-height: 100px;
 }
 
 .block-10 {
-    max-width: 10px;
-    min-height: 10px;
+    max-width: 25px;
+    min-height: 25px;
     background-color: yellow;
     margin-bottom: 30px;
 }
@@ -117,7 +208,7 @@ body {
 .finish {
     max-width: 100%;
     font-size: 30px;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-weight: 900;
     letter-spacing: 5px;
     text-transform: uppercase;
@@ -126,7 +217,7 @@ body {
     visibility: hidden;
 }
 
-.block-1:hover+.block-2,
+.block_1:hover+.block-2,
 .block-2:hover+.block-3,
 .block-3:hover+.block-4,
 .block-4:hover+.block-5,
@@ -158,5 +249,17 @@ body {
 }
 
 .finish:hover {
+    visibility: visible;
+}
+
+.game-block:target {
+    display: block;
+}
+
+.game__wrapper:target {
+    display: block;
+}
+
+.block_1 {
     visibility: visible;
 }
